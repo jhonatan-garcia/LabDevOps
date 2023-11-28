@@ -1,0 +1,19 @@
+name: Primer pipeline
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      name: Analisis del proyecto
+    - name: Ejecucion de un comando
+      run: echo Esta ejecutando el pipeline
+    - name: Ejecucion de varios comandos
+      run: |
+        echo Varias lineas
+        ls -la
